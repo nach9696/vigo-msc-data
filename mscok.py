@@ -159,6 +159,14 @@ try:
         print("⚠️  Timeout esperando tabla, continuando...")
     time.sleep(5)
 
+  # DEBUG — guardar texto para analizar la estructura
+with open('debug_msc.txt', 'w', encoding='utf-8') as f:
+    f.write(texto)
+print(f"DEBUG: {len(lineas_limpias)} líneas limpias")
+print("PRIMERAS 30 LÍNEAS:")
+for i, l in enumerate(lineas_limpias[:30]):
+    print(f"  {i}: {repr(l)}")
+
     # 9. Extraer y parsear
     try:
         main    = driver.find_element(By.XPATH, "//main")
