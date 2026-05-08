@@ -33,6 +33,9 @@ jobs:
       - name: Ejecutar scraper MSC
         run: python mscok.py
 
+      - name: Mostrar debug
+        run: cat debug_msc.txt || echo "Sin debug"
+
       - name: Guardar barcos_msc.json en el repo
         run: |
           git config user.name  "github-actions[bot]"
